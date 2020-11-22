@@ -66,6 +66,9 @@
 
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 img {
     max-width: 100%;
@@ -84,12 +87,12 @@ header {
     background: linear-gradient(hsl(273, 75%, 66%), hsl(212, 86%, 64%));
     position: relative;
     height: 100px;
-    
- 
-   
 
 
- 
+
+
+
+
     nav {
         @include nav-mobile;
         padding: 1em;
@@ -167,7 +170,7 @@ header {
     .input--area {
 
         background-color: var(--BG);
-        
+
         @include flex-2;
         margin: 1em 0.5em;
         padding: 1em;
@@ -330,11 +333,11 @@ main {
 
     .container {
         @include flex-1;
-       padding: 2em 0.5em;
+        padding: 2em 0.5em;
         max-width: 480px;
-        
 
-   
+
+
 
         ul {
             width: 100%;
@@ -343,7 +346,7 @@ main {
             grid-template-columns: repeat(auto-fit, 350px);
             grid-auto-rows: auto;
             gap: 1rem;
-            z-index: 11000;
+            // z-index: 11000;
             place-content: center;
 
             li {
@@ -352,11 +355,11 @@ main {
                 @include box-shadow-4;
                 transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1),
                     transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
-
-                //  opacity: 0;
-
-
+                cursor: pointer;
                
+              
+
+
 
 
 
@@ -377,19 +380,19 @@ main {
     .info {
 
         @include flex-2;
+            width: 100%;
 
     }
 
     h2 {
         text-transform: capitalize;
         font-size: 1rem;
-        text-align: center;
+        text-align: left;
         color: var(--Text-2);
         margin-bottom: 0.5em;
+        width: 100%;
 
-        span {
-            display: block;
-        }
+       
     }
 
     .img--section {
@@ -399,13 +402,8 @@ main {
         border-radius: 50%;
         @include flex-1;
         margin-bottom: 0.5em;
-        transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1),
-            transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
-        animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
-        opacity: 0;
+       
 
-        transition-delay: 1s;
-        animation-name: 1s;
     }
 
     .posted-time {
@@ -417,26 +415,36 @@ main {
     }
 
     article {
-        // align-self: start;
-        @include flex-1;
+      
+         
+         text-align: left;
+         width: 100%;
+         overflow: hidden;
+        
+         
 
 
 
 
         h3 {
+           
             font-size: 0.8rem;
-            display: inline-block;
-            margin: 1em;
+           display: inline-block;
+            margin:  0.5em;
             color: var(--Text-2);
             font-weight: 400;
-            text-align: center;
+            transition: transform 0.4 ease 0.4s;
+           
+            
+            
 
         }
+       
     }
 }
 
 .not--found {
- 
+
     h2 {
         @include secondary-title;
         color: var(--Text-2);
@@ -477,25 +485,48 @@ main {
     }
 }
 
-.show{
+.show {
 
 
-  nav{
-    transform: translateY(0);
-  }
+    nav {
+        transform: translateY(0);
+    }
 
 
 
+}
+
+.hover--state {
+    &:hover {
+        transform: translateY(-10px);
+    }
+
+}
+.art--ani{
+    article{
+        h3{
+            
+        transform: scale(1);
+            
+        }
+    }
+    
 }
 
 .list--animation {
     animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
 
-    &:hover {
-        transform: translateY(-10px);
-    }
 }
+.list--animation-2 {
+    opacity: 0;
+    animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.4s;
 
+}
+.list--animation-3 {
+    opacity: 0;
+    animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.6s;
+
+}
 .hide {
     display: none;
 }
@@ -537,12 +568,12 @@ main {
 
 @keyframes list-items {
     0% {
-        transform: scale(0.3);
+        transform: scaleX(0.3);
         opacity: 0;
     }
 
     100% {
-        transform: scale(1);
+        transform: scaleX(1);
         opacity: 1;
     }
 
@@ -577,106 +608,126 @@ main {
 
 //media queries
 
-@media screen and(min-width:481px){
+@media screen and(min-width:481px) {
 
-    header{
+    header {
         max-width: 768px;
 
-        nav{
+        nav {
             max-width: 768px;
 
         }
     }
 
-    .mobile--nav{
+    .mobile--nav {
         max-width: 768px;
     }
 
-    main{
+    main {
         max-width: 768px;
 
-        .container{
+        .container {
             max-width: 768px;
+
+            ul{
+                grid-template-columns: repeat(auto-fit, 420px);
+            }
         }
+
     }
 
+
+
+
 }
-@media screen and(min-width:769px){
 
-    header{
+@media screen and(min-width:769px) {
+
+    header {
         max-width: 900px;
-        
 
 
-        nav{
-           
+
+        nav {
+
             max-width: 900px;
 
         }
     }
 
-    .mobile--nav{
+    .mobile--nav {
         max-width: 900px;
     }
-  
 
-    main{
+
+    main {
         max-width: 900px;
-        .container{
+
+        .container {
             max-width: 900px;
+        }
+    }
+
+    .jobs{
+        h2{
+            font-size: 1.3rem;
         }
     }
 
 }
 
-@media screen and(min-width:901px){
+@media screen and(min-width:901px) {
 
-    header{
+    header {
         max-width: 1100px;
-       
 
-        nav{
+
+        nav {
             max-width: 1100px;
 
         }
     }
 
-    .mobile--nav{
+    .mobile--nav {
         max-width: 1100px;
     }
 
-    main{
+    main {
         max-width: 1100px;
-        
+
     }
 
 }
-@media screen and(min-width:1101px){
 
-    header{
+@media screen and(min-width:1101px) {
+
+    header {
         max-width: 1440px;
-    
-      
-       
- 
 
-        nav{
+
+
+
+
+        nav {
             max-width: 1440px;
 
         }
 
-       
-    }
-   
 
-    .mobile--nav{
+    }
+
+
+    .mobile--nav {
         max-width: 1440px;
     }
 
-    main{
+    main {
         max-width: 1440px;
-        .container{
+
+        .container {
             max-width: 1440px;
+
+           
         }
     }
 

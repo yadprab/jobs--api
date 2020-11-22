@@ -40,6 +40,10 @@
           box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -388,7 +392,6 @@ main .container ul {
       grid-template-columns: repeat(auto-fit, 350px);
   grid-auto-rows: auto;
   gap: 1rem;
-  z-index: 11000;
   place-content: center;
 }
 
@@ -401,6 +404,7 @@ main .container ul li {
   transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
   transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
   transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), transform 0.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
+  cursor: pointer;
 }
 
 .jobs {
@@ -427,18 +431,16 @@ main .container ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 .jobs h2 {
   text-transform: capitalize;
   font-size: 1rem;
-  text-align: center;
+  text-align: left;
   color: var(--Text-2);
   margin-bottom: 0.5em;
-}
-
-.jobs h2 span {
-  display: block;
+  width: 100%;
 }
 
 .jobs .img--section {
@@ -456,17 +458,6 @@ main .container ul li {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 0.5em;
-  -webkit-transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
-  transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), transform 0.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
-  -webkit-animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
-          animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
-  opacity: 0;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
-  -webkit-animation-name: 1s;
-          animation-name: 1s;
 }
 
 .jobs .posted-time {
@@ -480,24 +471,21 @@ main .container ul li {
 }
 
 .jobs article {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: left;
+  width: 100%;
+  overflow: hidden;
 }
 
 .jobs article h3 {
   font-size: 0.8rem;
   display: inline-block;
-  margin: 1em;
+  margin: 0.5em;
   color: var(--Text-2);
   font-weight: 400;
-  text-align: center;
+  -webkit-transition: -webkit-transform 0.4 ease 0.4s;
+  transition: -webkit-transform 0.4 ease 0.4s;
+  transition: transform 0.4 ease 0.4s;
+  transition: transform 0.4 ease 0.4s, -webkit-transform 0.4 ease 0.4s;
 }
 
 .not--found h2 {
@@ -553,14 +541,31 @@ main .container ul li {
           transform: translateY(0);
 }
 
+.hover--state:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+.art--ani article h3 {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 .list--animation {
   -webkit-animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
           animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
 }
 
-.list--animation:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+.list--animation-2 {
+  opacity: 0;
+  -webkit-animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.4s;
+          animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.4s;
+}
+
+.list--animation-3 {
+  opacity: 0;
+  -webkit-animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.6s;
+          animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.6s;
 }
 
 .hide {
@@ -615,26 +620,26 @@ main .container ul li {
 
 @-webkit-keyframes list-items {
   0% {
-    -webkit-transform: scale(0.3);
-            transform: scale(0.3);
+    -webkit-transform: scaleX(0.3);
+            transform: scaleX(0.3);
     opacity: 0;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
     opacity: 1;
   }
 }
 
 @keyframes list-items {
   0% {
-    -webkit-transform: scale(0.3);
-            transform: scale(0.3);
+    -webkit-transform: scaleX(0.3);
+            transform: scaleX(0.3);
     opacity: 0;
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
     opacity: 1;
   }
 }
@@ -667,6 +672,10 @@ main .container ul li {
   main .container {
     max-width: 768px;
   }
+  main .container ul {
+    -ms-grid-columns: (420px)[auto-fit];
+        grid-template-columns: repeat(auto-fit, 420px);
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -684,6 +693,9 @@ main .container ul li {
   }
   main .container {
     max-width: 900px;
+  }
+  .jobs h2 {
+    font-size: 1.3rem;
   }
 }
 

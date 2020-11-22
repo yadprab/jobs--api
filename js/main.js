@@ -76,6 +76,8 @@ const fetchData = (val)=>{
 
 
         if (data== null|| data.length == 0) {
+
+           
           
             ul.innerHTML = `
 
@@ -102,26 +104,44 @@ const fetchData = (val)=>{
          
 
             ul.innerHTML = data.map(jobs=>{
+                const time =(date)=>{
+
+                    const d = new Date(date).toISOString();
+
+                     const forMat = moment().format(d);
+                     
+                     
+                     const dt = moment(forMat).fromNow()
+
+
+
+                     return dt;
+
+
+
+
+                }
 
 
                 return `
-                <li class='jobs--list list--animation  ${jobs.type.slice(0,4)}${jobs.type.slice(5,9)}'>
+                <li class='jobs--list list--animation ${jobs.type.slice(0,4)}${jobs.type.slice(5,9)}'>
                 <section class="jobs">
-                    <section class="img--section">
+                    <section class="img--section list--animation-3">
                         <img src="${jobs.company_logo}"
                         alt="">
                        </section>
                   
                        <section class="info">
-                        <h2><span class="job-title">${jobs.title}</span></h2>
+                        <h2><span class="job-title list--animation-3" >${jobs.title}</span></h2>
+                  
                   
                         
-                        <span class="posted-time">${jobs.created_at}</span>
+                        <span class="posted-time list--animation-3">${time(jobs.created_at)}</span>
                         <article>
                            
-                            <h3 class="job-type">${jobs.type}</h3>
-                            <h3 class="job-location">${jobs.location}</h3>
-                            <h3 class="job-name">${jobs.company}</h3>
+                            <h3 class="job-type list--animation-3">${jobs.type}</h3>
+                            <h3 class="job-location list--animation-3">${jobs.location}</h3>
+                           
 
 
                         </article>
@@ -158,6 +178,14 @@ const fetchData = (val)=>{
 
 
             }).join('');
+
+
+            const jobsList = ul.querySelectorAll('.jobs--list');
+            
+            jobsList.forEach(jobs=>setTimeout(()=>{
+                jobs.classList.remove('list--animation');
+                jobs.classList.add('hover--state')
+            }, 1000))
             
         }
 
