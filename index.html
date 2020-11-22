@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f4f4fb">
     <link rel="stylesheet" href="./styles/style.css">
     <title>DEV jobs</title>
 </head>
@@ -66,7 +67,7 @@
         <section class="input--area">
             <h2>search and sort jobs</h2>
           <form action="" aria-label="search area">
-              <input type="search" name="search" id="search" aria-label="search jobs">
+              <input type="search" name="search" id="search" aria-label="search jobs" placeholder="enter your job description">
             
               <button id="searchbutton" aria-label="search button">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,10 +78,10 @@
               </button>
 
           </form>
-          <section class="filter--area">
-             <button id="all" data-value="all" class="button--not--active">all</button>
-             <button id="full--time-job" data-value="fulltime" class="button--not--active">fulltime</button>
-             <button id="part--time-job" data-value="parttime" class="button--not--active">parttime</button>
+          <section class="filter--area" aria-label="filter area">
+             <button id="all" data-value="all" class="button--not--active" aria-label="show all jobs">all</button>
+             <button id="full--time-job" data-value="fulltime" class="button--not--active" aria-label="filter full time jobd">fulltime</button>
+             <button id="part--time-job" data-value="parttime" class="button--not--active" aria-label="filter part time jobs">parttime</button>
 
           </section>
         </section>
@@ -89,35 +90,9 @@
 
         <section class="container">
             <ul class="jobs--area">
-                <!-- <li class="jobs--list FullTime hover--state" style="display: grid;">
-                <section class="jobs ">
-                    <section class="img--section list--animation-2">
-                        <img src="https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdWFPIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--55e643296c086c5940cd44469d81aa53f278354b/logoIG.png" alt="">
-                       </section>
-                  
-                       <section class="info">
-                        <h2 class="job-title list--animation">Frontend Developer JS</h2>
-                  
-                        
-                        <span class="posted-time list--animation">2days ago</span>
-                        <article  >
-                           
-                            <h3 class="job-type list--animation">Full Time</h3>
-                             
-                            <h3 class="job-location list--animation">Rotterdam (the Netherlands)</h3>
-                          
-
-
-                        </article>
-                     
-                       </section>
-                   
-
-                </section>
-            </li> -->
-                
+              
                
-                <li class="loader hide">
+                <li class="loader hide " >
                     <section class="img--section" >
                        <div class="box"></div>
                     </section>

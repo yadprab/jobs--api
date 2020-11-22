@@ -126,21 +126,21 @@ const fetchData = (val)=>{
                 return `
                 <li class='jobs--list list--animation ${jobs.type.slice(0,4)}${jobs.type.slice(5,9)}'>
                 <section class="jobs">
-                    <section class="img--section list--animation-3">
+                    <section class="img--section list--animation-2">
                         <img src="${jobs.company_logo}"
                         alt="">
                        </section>
                   
                        <section class="info">
-                        <h2><span class="job-title list--animation-3" >${jobs.title}</span></h2>
+                        <h2><span class="job-title list--animation-3" aria-label="job title" >${jobs.title}</span></h2>
                   
                   
                         
-                        <span class="posted-time list--animation-3">${time(jobs.created_at)}</span>
+                        <span class="posted-time list--animation-3" aria-label="job posted time">${time(jobs.created_at)}</span>
                         <article>
                            
-                            <h3 class="job-type list--animation-3">${jobs.type}</h3>
-                            <h3 class="job-location list--animation-3">${jobs.location}</h3>
+                            <h3 class="job-type list--animation-3" aria-label="job type">${jobs.type}</h3>
+                            <h3 class="job-location list--animation-3" aria-label="job location">${jobs.location}</h3>
                            
 
 
