@@ -490,7 +490,7 @@ main {
 }
 
 .selected--job {
-    width: 100%;
+    
     max-width: 480px;
     // background-color:  pink;
     display: grid;
@@ -635,7 +635,7 @@ main {
                
                 margin: 1em 0;
                 color: var(--Text-1);
-                display: block;
+                display: inline-block;
             }
 
             ul{
@@ -680,12 +680,16 @@ main {
             font-size: 0.8rem;
             font-weight: 400;
             letter-spacing: 1px;
+            display: block;
+            
         }
 
         a{
             text-decoration: underline;
             font-size: 0.8rem;
             color: var(--Soft-violet);
+             display: block;
+            
         }
     }
 

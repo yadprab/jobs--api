@@ -539,7 +539,6 @@ main .container .jobs--area li {
 }
 
 .selected--job {
-  width: 100%;
   max-width: 480px;
   display: -ms-grid;
   display: grid;
@@ -702,7 +701,7 @@ main .container .jobs--area li {
   font-size: 0.8rem;
   margin: 1em 0;
   color: var(--Text-1);
-  display: block;
+  display: inline-block;
 }
 
 .selected--job .jobs--overview article ul {
@@ -740,12 +739,14 @@ main .container .jobs--area li {
   font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 1px;
+  display: block;
 }
 
 .selected--job .how--to--apply a {
   text-decoration: underline;
   font-size: 0.8rem;
   color: var(--Soft-violet);
+  display: block;
 }
 
 .over {
