@@ -542,8 +542,8 @@ main .container .jobs--area li {
   max-width: 480px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr);
+  -ms-grid-columns: (minmax(380px, 480px))[1];
+      grid-template-columns: repeat(1, minmax(380px, 480px));
   gap: 1rem;
 }
 
