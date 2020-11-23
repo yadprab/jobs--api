@@ -66,7 +66,8 @@
 
     box-sizing: border-box;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -77,8 +78,10 @@ img {
 
 body {
     line-height: 1.5;
+   
     font-family: var(--font);
     background-color: var(--Top-BG-Pattern);
+    position: relative;
 
 }
 
@@ -339,7 +342,7 @@ main {
 
 
 
-        ul {
+        .jobs--area {
             width: 100%;
             display: grid;
             list-style: none;
@@ -356,8 +359,8 @@ main {
                 transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1),
                     transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
                 cursor: pointer;
-               
-              
+
+
 
 
 
@@ -374,13 +377,14 @@ main {
     place-items: center;
     font-family: var(--font-2);
     gap: 1rem;
+    pointer-events: none;
 
 
 
     .info {
 
         @include flex-2;
-            width: 100%;
+        width: 100%;
 
     }
 
@@ -392,7 +396,7 @@ main {
         margin-bottom: 0.5em;
         width: 100%;
 
-       
+
     }
 
     .img--section {
@@ -402,7 +406,7 @@ main {
         border-radius: 50%;
         @include flex-1;
         margin-bottom: 0.5em;
-       
+
 
     }
 
@@ -415,31 +419,31 @@ main {
     }
 
     article {
-      
-         
-         text-align: left;
-         width: 100%;
-         overflow: hidden;
-        
-         
+
+
+        text-align: left;
+        width: 100%;
+        overflow: hidden;
+
+
 
 
 
 
         h3 {
-           
+
             font-size: 0.8rem;
-           display: inline-block;
-            margin:  0.5em;
+            display: inline-block;
+            margin: 0.5em;
             color: var(--Text-2);
             font-weight: 400;
             transition: transform 0.4 ease 0.4s;
-           
-            
-            
+
+
+
 
         }
-       
+
     }
 }
 
@@ -485,15 +489,273 @@ main {
     }
 }
 
+.selected--job {
+    width: 100%;
+    max-width: 480px;
+    // background-color:  pink;
+    display: grid;
+  
+    grid-template-columns: repeat(1, 1fr);
+
+    gap: 1rem;
+ 
+
+    a {
+        text-decoration: none;
+    }
+
+
+    .job--intro {
+        background-color: var(--BG);
+        height: 200px;
+        border-radius: 5px;
+        @include flex-2;
+
+        .job--img--section {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--Top-BG-Pattern);
+             @include flex-1;
+
+
+        }
+
+        .job--info--section {
+            margin-top: 1em;
+
+            // width: 100%;
+            h2 {
+                text-transform: capitalize;
+                font-size: 1rem;
+                text-align: center;
+                color: var(--Text-2);
+                margin-bottom: 0.5em;
+
+                span {
+                    display: block;
+                    font-size: 0.8rem;
+                    color: var(--Text-1);
+                }
+            }
+
+            a {
+
+                @include button;
+                background-color: var(--BG);
+                padding: 0.5em;
+                text-align: center;
+                border: 1px solid var(--Blue);
+                color: var(--Text-2);
+                font-family: var(--font-2);
+                text-transform: capitalize;
+                letter-spacing: 1px;
+                position: relative;
+                transition:  background 0.4s ease;
+
+                &:hover {
+                    background-color: var(--Blue);
+                  
+                    color: var(--BG);
+                  
+                }
+
+
+
+            }
+
+
+        }
+
+
+    }
+    .jobs--overview{
+      background-color: var(--BG);
+      padding: 1em;
+        .job--description {
+            
+            
+            margin:1em 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.8rem;
+           
+             h3{
+                 font-size: 0.8rem;
+                 color: var(--Text-1);
+                 font-family: var(--font);
+                 font-weight: 400;
+                 letter-spacing: 1px;
+                 text-align: center;
+
+                 span{
+                     display: inline-block;
+                     margin-left: 0.3em;
+                 }
+
+                
+             }
+
+             .job--des--name{
+                 text-transform: capitalize;
+                 font-size: 1.3rem;
+                 color: var(--Text-2);
+                 font-weight: 700;
+             }
+
+             a{
+                   @include button;
+                   background-color: var(--Soft-violet);
+                    text-align: center;
+                  color: hsl(0, 0%, 0%);
+                   font-family: var(--font-2);
+                    letter-spacing: 1px;
+                   position: relative;
+                   font-weight: 700;
+                   text-transform: uppercase;
+
+
+             }
+
+        }
+
+
+        article{
+             line-height: 1.8;
+
+            // p:nth-of-type(5):nth-of-type(6):nth-of-type(7){
+            //     text-transform: capitalize;
+            //     font-size: 1rem;
+            //     color: var(--Text-2);
+            //     font-weight: 700;
+            //     letter-spacing: 1px;
+            // }
+            p{
+                font-size: 0.8rem;
+               
+                margin: 1em 0;
+                color: var(--Text-1);
+                display: block;
+            }
+
+            ul{
+                color: var(--Text-2);
+                font-size: 0.8rem;
+                   margin: 0 1em;
+                   font-family: var(--font-2);
+                   letter-spacing: 1px;
+                   font-weight: 400;
+
+                   li{
+                       margin: 0.5em 0;
+                   }
+            }
+
+            .res--list{
+                list-style: numbers;
+            }
+        }
 
 
 
 
-::placeholder{
+    }
+    
+
+    .how--to--apply{
+        background-color: var(--BG);
+        color: var(--Text-2);
+         font-family: var(--font-2);
+        padding: 1em;
+
+        h3{
+            text-transform: capitalize;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+           
+        }
+
+        p{
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        a{
+            text-decoration: underline;
+            font-size: 0.8rem;
+            color: var(--Soft-violet);
+        }
+    }
+
+
+}
+.over{
+    padding: 0;
+
+    .container{
+        padding: 0 1em;
+        position: relative;
+        top: -50px;
+    }
+}
+
+.footer--overlay{
+    position:fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 11000;
+    background-color: var(--BG);
+    display: grid;
+    grid-template-columns:1fr 100px;
+    padding: 0.5em;
+
+    h3{
+        color: var(--Text-2);
+        font-size: 1rem;
+        text-transform: capitalize;
+
+
+    }
+
+    span{
+        color: var(--Text-1);
+        font-size: 0.8rem;
+    }
+   
+          a {
+              margin: 0 1em;
+              place-self: center;
+              text-decoration: none;
+             @include button;
+             background-color: var(--Soft-violet);
+             text-align: center;
+             color: hsl(0, 0%, 0%);
+             font-family: var(--font-2);
+             letter-spacing: 1px;
+             position: relative;
+             font-weight: 700;
+             text-transform: uppercase;
+             padding: 0.5em 2em;
+
+
+         }
+
+    
+}
+
+
+
+
+
+::placeholder {
     text-transform: uppercase;
     font-size: 0.8rem;
     font-family: var(--font-1);
 }
+
 .show {
 
 
@@ -511,31 +773,35 @@ main {
     }
 
 }
-.art--ani{
-    article{
-        h3{
-            
-        transform: scale(1);
-            
+
+.art--ani {
+    article {
+        h3 {
+
+            transform: scale(1);
+
         }
     }
-    
+
 }
 
 .list--animation {
     animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
 
 }
+
 .list--animation-2 {
     opacity: 0;
     animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.4s;
 
 }
+
 .list--animation-3 {
     opacity: 0;
     animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.6s;
 
 }
+
 .hide {
     display: none;
 }
@@ -638,8 +904,57 @@ main {
         .container {
             max-width: 768px;
 
-            ul{
+            ul {
                 grid-template-columns: repeat(auto-fit, 420px);
+            }
+
+            .selected--job{
+              
+                .job--intro{
+                    max-width: 420px;
+                   flex-direction: row;
+                   justify-content:space-around;
+                   height: 120px;
+                  
+
+                   .job--img--section{
+                      
+                      margin-left: 1em;
+                       
+                        
+                   }
+
+                   .job--info--section{
+                    @include flex-1;
+                    justify-content: space-around;
+                      flex: 50%;
+                      h3{
+                          text-align: left;
+                          
+                      }
+                      span {
+                          text-align: left;
+                      }
+                      a{
+                          margin: 0 1em;
+                      }
+                   }
+                }
+                .jobs--overview{
+                   .job--description{
+                        grid-template-columns: 1fr 1fr;
+                       
+                        h3{
+                             text-align: left;
+                        }
+
+                        a{
+                            place-self: center;
+                            padding: 0.5em 2em;
+
+                        }
+                   }
+                }
             }
         }
 
@@ -654,6 +969,8 @@ main {
 
     header {
         max-width: 900px;
+
+
 
 
 
@@ -674,11 +991,17 @@ main {
 
         .container {
             max-width: 900px;
+
+            .selected--job{
+                max-width: 700px;
+            }
+
+            
         }
     }
 
-    .jobs{
-        h2{
+    .jobs {
+        h2 {
             font-size: 1.3rem;
         }
     }
@@ -736,7 +1059,7 @@ main {
         .container {
             max-width: 1440px;
 
-           
+
         }
     }
 

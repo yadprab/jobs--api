@@ -29,7 +29,12 @@ const jobSearchFn = ()=>{
 
   //get nav button
 
-  const navButton = document.querySelector('#navigation--button')
+  const navButton = document.querySelector('#navigation--button');
+
+
+  const container = document.querySelector('.container');
+
+    const inputArea = document.querySelector('.input--area');
 
 
 
@@ -64,6 +69,23 @@ const submitFn = (e)=>{
 
     
 }
+ const time =(date)=>{
+
+                    const d = new Date(date).toISOString();
+
+                     const forMat = moment().format(d);
+                     
+                     
+                     const dt = moment(forMat).fromNow()
+
+
+
+                     return dt;
+
+
+
+
+                }
 
 
 const fetchData = (val)=>{
@@ -73,7 +95,8 @@ const fetchData = (val)=>{
 
     fetch(endpoint).then(res=>res.json()).then(data=>{
      
-
+          const dataArr = [...data];
+          console.log(dataArr);
 
         if (data== null|| data.length == 0) {
 
@@ -104,23 +127,7 @@ const fetchData = (val)=>{
          
 
             ul.innerHTML = data.map(jobs=>{
-                const time =(date)=>{
-
-                    const d = new Date(date).toISOString();
-
-                     const forMat = moment().format(d);
-                     
-                     
-                     const dt = moment(forMat).fromNow()
-
-
-
-                     return dt;
-
-
-
-
-                }
+               
 
 
                 return `
@@ -185,7 +192,18 @@ const fetchData = (val)=>{
             jobsList.forEach(jobs=>setTimeout(()=>{
                 jobs.classList.remove('list--animation');
                 jobs.classList.add('hover--state')
-            }, 1000))
+            }, 1000));
+
+
+            jobsList.forEach((li, index)=>li.addEventListener('click', (e)=>{
+                 e.stopPropagation();
+                 const target = dataArr[index];
+                  
+                  descriptionFn(target)
+
+            }, {
+                capture: true,
+            }))
             
         }
 
@@ -205,6 +223,121 @@ const fetchData = (val)=>{
     })
 
 
+
+
+}
+const descriptionFn =(obj)=>{
+
+    if (obj.length == 0 || obj=== null) {
+        return;
+        
+    }
+
+    const dataObj = obj;
+    console.log(JSON.stringify(dataObj.description.replace(/\n/g, '')));
+     const main = document.querySelector('main');
+
+     main.classList.add('over');
+
+     inputArea.style.display = 'none';
+
+
+     container.innerHTML = `
+     <section class="selected--job">
+                <section class="job--intro">
+                    <section class="job--img--section">
+                        <img src="${dataObj.company_logo}" alt="logo">
+
+                    </section>
+
+                    <section class="job--info--section">
+                        <h2>${dataObj.company}<span>site</span></h2>
+                        
+                         
+                        <a href="${dataObj.company_url}" target="_blank" rel="noopener noreferrer">company site</a>
+                         
+                      
+                    </section>
+
+                </section>
+                
+            <section class="jobs--overview">
+                 <section class="job--description">
+
+                  <section>
+                      <h3 id="time">${time(dataObj.created_at)}<span></span>.<span>${dataObj.type}</span></h3>
+                <h3 class="job--des--name">${dataObj.title}</h3>
+                <h3 id="job--location--detail">${dataObj.location}</h3>
+                  </section>
+
+                <a href="${dataObj.url}" target="_blank" rel="noopener noreferrer">apply now</a>
+
+
+
+
+            </section>
+
+
+            <article class="content--desc">
+                   ${dataObj.description.replace(/\n/g, '')}
+           </article>
+        </section>
+             <article class="how--to--apply">
+                 <h3>how to apply</h3>
+                     ${dataObj.how_to_apply.replace(/\n/g, '')}
+
+            </article>
+
+        </section> 
+
+              
+                
+     
+
+        </section>
+    
+
+        
+       <section class="footer--overlay">
+        <section class="details">
+              <h3>${dataObj.title}</h3>
+        <span>${dataObj.company}</span>
+        </section>
+                         
+     <a href="${dataObj.url}" target="_blank" rel="noopener noreferrer">apply</a>
+
+
+    </section>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     `
+
+
+
+// const contentDesc = document.querySelectorAll('p');
+
+// console.log(contentDesc);
+
+  
 
 
 }

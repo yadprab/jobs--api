@@ -53,6 +53,7 @@ body {
   line-height: 1.5;
   font-family: var(--font);
   background-color: var(--Top-BG-Pattern);
+  position: relative;
 }
 
 header {
@@ -383,7 +384,7 @@ main .container {
   max-width: 480px;
 }
 
-main .container ul {
+main .container .jobs--area {
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -395,7 +396,7 @@ main .container ul {
   place-content: center;
 }
 
-main .container ul li {
+main .container .jobs--area li {
   background-color: var(--BG);
   padding: 1em 0 1em 1em;
   -webkit-box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-4));
@@ -415,6 +416,7 @@ main .container ul li {
   place-items: center;
   font-family: var(--font-2);
   gap: 1rem;
+  pointer-events: none;
 }
 
 .jobs .info {
@@ -534,6 +536,278 @@ main .container ul li {
 
 .loader .info .box {
   margin-bottom: 1em;
+}
+
+.selected--job {
+  width: 100%;
+  max-width: 480px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+  gap: 1rem;
+}
+
+.selected--job a {
+  text-decoration: none;
+}
+
+.selected--job .job--intro {
+  background-color: var(--BG);
+  height: 200px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.selected--job .job--intro .job--img--section {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--Top-BG-Pattern);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.selected--job .job--intro .job--info--section {
+  margin-top: 1em;
+}
+
+.selected--job .job--intro .job--info--section h2 {
+  text-transform: capitalize;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--Text-2);
+  margin-bottom: 0.5em;
+}
+
+.selected--job .job--intro .job--info--section h2 span {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--Text-1);
+}
+
+.selected--job .job--intro .job--info--section a {
+  display: inline-block;
+  line-height: 1.5;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375em 0.75em;
+  font-size: 0.89rem;
+  text-transform: capitalize;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  background-color: var(--BG);
+  padding: 0.5em;
+  text-align: center;
+  border: 1px solid var(--Blue);
+  color: var(--Text-2);
+  font-family: var(--font-2);
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  position: relative;
+  -webkit-transition: background 0.4s ease;
+  transition: background 0.4s ease;
+}
+
+.selected--job .job--intro .job--info--section a:hover {
+  background-color: var(--Blue);
+  color: var(--BG);
+}
+
+.selected--job .jobs--overview {
+  background-color: var(--BG);
+  padding: 1em;
+}
+
+.selected--job .jobs--overview .job--description {
+  margin: 1em 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.selected--job .jobs--overview .job--description h3 {
+  font-size: 0.8rem;
+  color: var(--Text-1);
+  font-family: var(--font);
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.selected--job .jobs--overview .job--description h3 span {
+  display: inline-block;
+  margin-left: 0.3em;
+}
+
+.selected--job .jobs--overview .job--description .job--des--name {
+  text-transform: capitalize;
+  font-size: 1.3rem;
+  color: var(--Text-2);
+  font-weight: 700;
+}
+
+.selected--job .jobs--overview .job--description a {
+  display: inline-block;
+  line-height: 1.5;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375em 0.75em;
+  font-size: 0.89rem;
+  text-transform: capitalize;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  background-color: var(--Soft-violet);
+  text-align: center;
+  color: black;
+  font-family: var(--font-2);
+  letter-spacing: 1px;
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.selected--job .jobs--overview article {
+  line-height: 1.8;
+}
+
+.selected--job .jobs--overview article p {
+  font-size: 0.8rem;
+  margin: 1em 0;
+  color: var(--Text-1);
+  display: block;
+}
+
+.selected--job .jobs--overview article ul {
+  color: var(--Text-2);
+  font-size: 0.8rem;
+  margin: 0 1em;
+  font-family: var(--font-2);
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+.selected--job .jobs--overview article ul li {
+  margin: 0.5em 0;
+}
+
+.selected--job .jobs--overview article .res--list {
+  list-style: numbers;
+}
+
+.selected--job .how--to--apply {
+  background-color: var(--BG);
+  color: var(--Text-2);
+  font-family: var(--font-2);
+  padding: 1em;
+}
+
+.selected--job .how--to--apply h3 {
+  text-transform: capitalize;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.selected--job .how--to--apply p {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.selected--job .how--to--apply a {
+  text-decoration: underline;
+  font-size: 0.8rem;
+  color: var(--Soft-violet);
+}
+
+.over {
+  padding: 0;
+}
+
+.over .container {
+  padding: 0 1em;
+  position: relative;
+  top: -50px;
+}
+
+.footer--overlay {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 11000;
+  background-color: var(--BG);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 100px;
+      grid-template-columns: 1fr 100px;
+  padding: 0.5em;
+}
+
+.footer--overlay h3 {
+  color: var(--Text-2);
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.footer--overlay span {
+  color: var(--Text-1);
+  font-size: 0.8rem;
+}
+
+.footer--overlay a {
+  margin: 0 1em;
+  place-self: center;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 1.5;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375em 0.75em;
+  font-size: 0.89rem;
+  text-transform: capitalize;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  background-color: var(--Soft-violet);
+  text-align: center;
+  color: black;
+  font-family: var(--font-2);
+  letter-spacing: 1px;
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.5em 2em;
 }
 
 ::-webkit-input-placeholder {
@@ -700,6 +974,55 @@ main .container ul li {
     -ms-grid-columns: (420px)[auto-fit];
         grid-template-columns: repeat(auto-fit, 420px);
   }
+  main .container .selected--job .job--intro {
+    max-width: 420px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 120px;
+  }
+  main .container .selected--job .job--intro .job--img--section {
+    margin-left: 1em;
+  }
+  main .container .selected--job .job--intro .job--info--section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
+  }
+  main .container .selected--job .job--intro .job--info--section h3 {
+    text-align: left;
+  }
+  main .container .selected--job .job--intro .job--info--section span {
+    text-align: left;
+  }
+  main .container .selected--job .job--intro .job--info--section a {
+    margin: 0 1em;
+  }
+  main .container .selected--job .jobs--overview .job--description {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  main .container .selected--job .jobs--overview .job--description h3 {
+    text-align: left;
+  }
+  main .container .selected--job .jobs--overview .job--description a {
+    place-self: center;
+    padding: 0.5em 2em;
+  }
 }
 
 @media screen and (min-width: 769px) {
@@ -717,6 +1040,9 @@ main .container ul li {
   }
   main .container {
     max-width: 900px;
+  }
+  main .container .selected--job {
+    max-width: 700px;
   }
   .jobs h2 {
     font-size: 1.3rem;
