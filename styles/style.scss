@@ -490,13 +490,10 @@ main {
 }
 
 .selected--job {
-<<<<<<< HEAD
+
     
     max-width: 480px;
-=======
-      max-width: 480px;
->>>>>>> 73841b8e5c2044dbcb56398078f89cbfabff4222
-    // background-color:  pink;
+
     display: grid;
   
     grid-template-columns: repeat(1, minmax(380px, 480px));
@@ -547,7 +544,7 @@ main {
 
                 @include button;
                 background-color: var(--BG);
-                padding: 0.5em;
+                padding: 0.5em 2em;
                 text-align: center;
                 border: 1px solid var(--Blue);
                 color: var(--Text-2);
@@ -670,7 +667,7 @@ main {
         background-color: var(--BG);
         color: var(--Text-2);
          font-family: var(--font-2);
-        padding: 1em;
+        padding: 2em;
 
         h3{
             text-transform: capitalize;
@@ -693,6 +690,9 @@ main {
             font-size: 0.8rem;
             color: var(--Soft-violet);
              display: block;
+           overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
             
         }
     }
@@ -719,6 +719,7 @@ main {
     display: grid;
     grid-template-columns:1fr 100px;
     padding: 0.5em;
+    
 
     h3{
         color: var(--Text-2);

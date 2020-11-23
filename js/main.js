@@ -336,11 +336,47 @@ const descriptionFn =(obj)=>{
 // const contentDesc = document.querySelectorAll('p');
 
 // console.log(contentDesc);
-
+inter();
   
 
 
 }
+
+const inter = ()=>{
+  const target = document.querySelector('.how--to--apply');
+  
+  
+  const foot = document.querySelector('.footer--overlay');
+  
+  if (foot=== null||target===null) {
+    return;
+    
+  }
+let observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if (entry.isIntersecting) {
+        foot.style.display = "none"
+        
+      }else{
+         foot.style.display = "grid"
+        
+      }
+    })
+});
+  
+
+observer.observe(target);
+  
+
+  
+  
+  
+
+    
+    
+  }
+  
+  
 
 const filterFn =(e)=>{
 
