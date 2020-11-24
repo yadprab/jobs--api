@@ -618,7 +618,6 @@ main .container .jobs--area li {
   border-radius: 2px;
   letter-spacing: 1px;
   background-color: var(--BG);
-  padding: 0.5em 2em;
   text-align: center;
   border: 1px solid var(--Blue);
   color: var(--Text-2);
@@ -811,6 +810,7 @@ main .container .jobs--area li {
   position: relative;
   font-weight: 700;
   text-transform: uppercase;
+  padding: 0.5em 1em;
 }
 
 .error span {
