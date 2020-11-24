@@ -504,7 +504,30 @@ main {
     a {
         text-decoration: none;
     }
+      .site {
 
+                @include button;
+                background-color: var(--BG);
+              
+                text-align: center;
+                border: 1px solid var(--Blue);
+                color: var(--Text-2);
+                font-family: var(--font-2);
+                text-transform: capitalize;
+                letter-spacing: 1px;
+                position: relative;
+                transition:  background 0.4s ease;
+
+                &:hover {
+                    background-color: var(--Blue);
+                  
+                    color: var(--BG);
+                  
+                }
+
+
+
+            }
 
     .job--intro {
         background-color: var(--BG);
@@ -540,30 +563,7 @@ main {
                 }
             }
 
-            a {
-
-                @include button;
-                background-color: var(--BG);
-              
-                text-align: center;
-                border: 1px solid var(--Blue);
-                color: var(--Text-2);
-                font-family: var(--font-2);
-                text-transform: capitalize;
-                letter-spacing: 1px;
-                position: relative;
-                transition:  background 0.4s ease;
-
-                &:hover {
-                    background-color: var(--Blue);
-                  
-                    color: var(--BG);
-                  
-                }
-
-
-
-            }
+      
 
 
         }

@@ -303,7 +303,7 @@ const descriptionFn =(obj)=>{
                 <h3 id="job--location--detail">${dataObj.location}</h3>
                   </section>
 
-                <a href="${dataObj.url}" target="_blank" rel="noopener noreferrer">apply now</a>
+                <a href="${dataObj.url}" target="_blank" rel="noopener noreferrer" class="site">apply now</a>
 
 
 
