@@ -286,11 +286,12 @@ const descriptionFn =(obj)=>{
                         <h2>${dataObj.company}<span>site</span></h2>
                         
                          
-                        <a href="${dataObj.company_url}" target="_blank" rel="noopener noreferrer">company site</a>
-                         
+
                       
                     </section>
-
+                    
+                        <a href="${dataObj.company_url}" target="_blank" rel="noopener noreferrer">company site</a>
+                         
                 </section>
                 
             <section class="jobs--overview">
