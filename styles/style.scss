@@ -78,7 +78,7 @@ img {
 
 body {
     line-height: 1.5;
-   
+
     font-family: var(--font);
     background-color: var(--Top-BG-Pattern);
     position: relative;
@@ -491,43 +491,20 @@ main {
 
 .selected--job {
 
-    
+
     max-width: 480px;
 
     display: grid;
-  
+
     grid-template-columns: repeat(1, minmax(380px, 480px));
 
     gap: 1rem;
- 
+
 
     a {
         text-decoration: none;
     }
-      .site {
 
-                @include button;
-                background-color: var(--BG);
-              
-                text-align: center;
-                border: 1px solid var(--Blue);
-                color: var(--Text-2);
-                font-family: var(--font-2);
-                text-transform: capitalize;
-                letter-spacing: 1px;
-                position: relative;
-                transition:  background 0.4s ease;
-
-                &:hover {
-                    background-color: var(--Blue);
-                  
-                    color: var(--BG);
-                  
-                }
-
-
-
-            }
 
     .job--intro {
         background-color: var(--BG);
@@ -535,12 +512,37 @@ main {
         border-radius: 5px;
         @include flex-2;
 
+        .site {
+
+            @include button;
+            background-color: var(--BG);
+
+            text-align: center;
+            border: 1px solid var(--Blue);
+            color: var(--Text-2);
+            font-family: var(--font-2);
+            text-transform: capitalize;
+            letter-spacing: 1px;
+            position: relative;
+            transition: background 0.4s ease;
+
+            &:hover {
+                background-color: var(--Blue);
+
+                color: var(--BG);
+
+            }
+
+
+
+        }
+
         .job--img--section {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             background-color: var(--Top-BG-Pattern);
-             @include flex-1;
+            @include flex-1;
 
 
         }
@@ -563,90 +565,92 @@ main {
                 }
             }
 
-      
+
 
 
         }
 
 
     }
-    .jobs--overview{
-      background-color: var(--BG);
-      padding: 1em;
+
+    .jobs--overview {
+        background-color: var(--BG);
+        padding: 1em;
+
         .job--description {
-            
-            
-            margin:1em 0;
+
+
+            margin: 1em 0;
             display: grid;
             grid-template-columns: 1fr;
             gap: 0.8rem;
-           
-             h3{
-                 font-size: 0.8rem;
-                 color: var(--Text-1);
-                 font-family: var(--font);
-                 font-weight: 400;
-                 letter-spacing: 1px;
-                 text-align: center;
 
-                 span{
-                     display: inline-block;
-                     margin-left: 0.3em;
-                 }
+            h3 {
+                font-size: 0.8rem;
+                color: var(--Text-1);
+                font-family: var(--font);
+                font-weight: 400;
+                letter-spacing: 1px;
+                text-align: center;
 
-                
-             }
-
-             .job--des--name{
-                 text-transform: capitalize;
-                 font-size: 1.3rem;
-                 color: var(--Text-2);
-                 font-weight: 700;
-             }
-
-             a{
-                   @include button;
-                   background-color: var(--Soft-violet);
-                    text-align: center;
-                  color: hsl(0, 0%, 0%);
-                   font-family: var(--font-2);
-                    letter-spacing: 1px;
-                   position: relative;
-                   font-weight: 700;
-                   text-transform: uppercase;
+                span {
+                    display: inline-block;
+                    margin-left: 0.3em;
+                }
 
 
-             }
+            }
+
+            .job--des--name {
+                text-transform: capitalize;
+                font-size: 1.3rem;
+                color: var(--Text-2);
+                font-weight: 700;
+            }
+
+            a {
+                @include button;
+                background-color: var(--Soft-violet);
+                text-align: center;
+                color: hsl(0, 0%, 0%);
+                font-family: var(--font-2);
+                letter-spacing: 1px;
+                position: relative;
+                font-weight: 700;
+                text-transform: uppercase;
+
+
+            }
 
         }
 
 
-        article{
-             line-height: 1.8;
+        article {
+            line-height: 1.8;
 
-           
-            p{
+
+            p {
                 font-size: 0.8rem;
-               
+
                 margin: 1em 0;
                 color: var(--Text-1);
                 display: inline-block;
             }
 
-            ul{
+            ul {
                 color: var(--Text-2);
                 font-size: 0.8rem;
-                   margin: 0 1em;
-                   font-family: var(--font-2);
-                   letter-spacing: 1px;
-                   font-weight: 400;
+                margin: 0 1em;
+                font-family: var(--font-2);
+                letter-spacing: 1px;
+                font-weight: 400;
 
-                   li{
-                       margin: 0.5em 0;
-                   }
+                li {
+                    margin: 0.5em 0;
+                }
             }
 
-            .res--list{
+            .res--list {
                 list-style: numbers;
             }
         }
@@ -655,67 +659,68 @@ main {
 
 
     }
-    
 
-    .how--to--apply{
+
+    .how--to--apply {
         background-color: var(--BG);
         color: var(--Text-2);
-         font-family: var(--font-2);
+        font-family: var(--font-2);
         padding: 2em;
 
-        h3{
+        h3 {
             text-transform: capitalize;
             font-size: 1rem;
             letter-spacing: 1px;
             font-weight: 700;
-           
+
         }
 
-        p{
+        p {
             font-size: 0.8rem;
             font-weight: 400;
             letter-spacing: 1px;
             display: block;
-            
+
         }
 
-        a{
+        a {
             text-decoration: underline;
             font-size: 0.8rem;
             color: var(--Soft-violet);
-             display: block;
-           overflow: hidden;
+            display: block;
+            overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
-            
+
         }
     }
 
 
 }
-.over{
+
+.over {
     padding: 0;
 
-    .container{
+    .container {
         padding: 0 1em;
         position: relative;
         top: -50px;
     }
 }
 
-.footer--overlay{
-    position:fixed;
+.footer--overlay {
+    position: fixed;
     bottom: 0;
     right: 0;
     left: 0;
     z-index: 11000;
     background-color: var(--BG);
     display: grid;
-    grid-template-columns:1fr 100px;
+    grid-template-columns: 1fr 100px;
     padding: 0.5em;
-    
 
-    h3{
+
+    h3 {
         color: var(--Text-2);
         font-size: 1rem;
         text-transform: capitalize;
@@ -723,39 +728,40 @@ main {
 
     }
 
-    span{
+    span {
         color: var(--Text-1);
         font-size: 0.8rem;
     }
-   
-          a {
-              margin: 0 1em;
-              place-self: center;
-              text-decoration: none;
-             @include button;
-             background-color: var(--Soft-violet);
-             text-align: center;
-             color: hsl(0, 0%, 0%);
-             font-family: var(--font-2);
-             letter-spacing: 1px;
-             position: relative;
-             font-weight: 700;
-             text-transform: uppercase;
-             padding: 0.5em 1em;
-           
+
+    a {
+        margin: 0 1em;
+        place-self: center;
+        text-decoration: none;
+        @include button;
+        background-color: var(--Soft-violet);
+        text-align: center;
+        color: hsl(0, 0%, 0%);
+        font-family: var(--font-2);
+        letter-spacing: 1px;
+        position: relative;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 0.5em 1em;
 
 
-         }
 
-    
+    }
+
+
 }
 
-.error{
-    span{
+.error {
+    span {
         display: block;
-    
+
     }
-    h1{
+
+    h1 {
         text-transform: capitalize;
         color: var(--red);
         font-size: 3rem;
@@ -919,53 +925,57 @@ main {
         .container {
             max-width: 768px;
 
-          
-            .selected--job{
-              
-                .job--intro{
-                  
-                   flex-direction: row;
-                   justify-content:space-around;
-                   height: 120px;
-                  
 
-                   .job--img--section{
-                      
-                      margin-left: 1em;
-                       
-                        
-                   }
+            .selected--job {
 
-                   .job--info--section{
-                    @include flex-1;
+                .job--intro {
+
+                    flex-direction: row;
                     justify-content: space-around;
-                      flex: 50%;
-                      h3{
-                          text-align: left;
-                          
-                      }
-                      span {
-                          text-align: left;
-                      }
-                      a{
-                          margin: 0 1em;
-                      }
-                   }
-                }
-                .jobs--overview{
-                   .job--description{
-                        grid-template-columns: 1fr 1fr;
-                       
-                        h3{
-                             text-align: left;
+                    height: 120px;
+
+
+                    .job--img--section {
+
+                        margin-left: 1em;
+
+
+                    }
+
+                    .job--info--section {
+                        @include flex-1;
+                        justify-content: space-around;
+                        flex: 50%;
+
+                        h3 {
+                            text-align: left;
+
                         }
 
-                        a{
+                        span {
+                            text-align: left;
+                        }
+
+                        a {
+                            margin: 0 1em;
+                        }
+                    }
+                }
+
+                .jobs--overview {
+                    .job--description {
+                        grid-template-columns: 1fr 1fr;
+
+                        h3 {
+                            text-align: left;
+                        }
+
+                        a {
                             place-self: center;
                             padding: 0.5em 2em;
 
                         }
-                   }
+                    }
                 }
             }
         }
@@ -981,14 +991,14 @@ main {
 
     header {
         max-width: 900px;
-       
 
-         .input--area{
-             max-width: 700px;
+
+        .input--area {
+            max-width: 700px;
             margin: 0 auto;
-            
 
-         }
+
+        }
 
 
 
@@ -1010,11 +1020,11 @@ main {
         .container {
             max-width: 900px;
 
-            .selected--job{
+            .selected--job {
                 grid-template-columns: repeat(1, 580px);
             }
 
-            
+
         }
     }
 

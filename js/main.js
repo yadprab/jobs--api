@@ -290,7 +290,7 @@ const descriptionFn =(obj)=>{
                       
                     </section>
                     
-                        <a href="${dataObj.company_url}" target="_blank" rel="noopener noreferrer">company site</a>
+                        <a href="${dataObj.company_url}" target="_blank" rel="noopener noreferrer"  class= 'site'>company site</a>
                          
                 </section>
                 
