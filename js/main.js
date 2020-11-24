@@ -32,9 +32,9 @@ const jobSearchFn = ()=>{
   const navButton = document.querySelector('#navigation--button');
 
 
-  const container = document.querySelector('.container');
+ const container = document.querySelector('.container');
 
-    const inputArea = document.querySelector('.input--area');
+ const inputArea = document.querySelector('.input--area');
 
 
 
@@ -71,29 +71,41 @@ const submitFn = (e)=>{
 }
  const time =(date)=>{
 
-                    const d = new Date(date).toISOString();
+  const d = new Date(date).toISOString();
 
-                     const forMat = moment().format(d);
+const forMat = moment().format(d);
                      
                      
-                     const dt = moment(forMat).fromNow()
+ const dt = moment(forMat).fromNow()
 
 
 
-                     return dt;
+ return dt;                 
 
 
 
 
-                }
+}
 
 
 const fetchData = (val)=>{
  
-    const endpoint =`https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json?description=${val}`;
+  
+ 
+   
 
-
-    fetch(endpoint).then(res=>res.json()).then(data=>{
+    fetch('/.netlify/functions/getjobs',{
+        method:'POST',
+        headers:{
+            
+            
+             'Accept': 'application/json',
+            'Content-Type': 'text/plain',
+           
+        },
+        body:val,
+    }).then(res=>res.json()).then(data=>{
+        console.log(data);
      
           const dataArr = [...data];
           console.log(dataArr);
@@ -205,7 +217,7 @@ const fetchData = (val)=>{
                 capture: true,
             }))
             
-        }
+       }
 
         
    
@@ -222,7 +234,25 @@ const fetchData = (val)=>{
 
     })
 
+      .catch(err=>{
+         
+          container.innerHTML = `
 
+           <section class='error'>
+           
+              <h1>
+               <span>:(</span>
+               
+              ${err} sorry for the inconvenience
+                
+              </h1>
+          </section>
+          
+          
+          
+          `;
+         
+      })
 
 
 }
@@ -234,7 +264,9 @@ const descriptionFn =(obj)=>{
     }
 
     const dataObj = obj;
+
     console.log(JSON.stringify(dataObj.description.replace(/\n/g, '')));
+
      const main = document.querySelector('main');
 
      main.classList.add('over');
@@ -333,9 +365,7 @@ const descriptionFn =(obj)=>{
 
 
 
-// const contentDesc = document.querySelectorAll('p');
 
-// console.log(contentDesc);
 inter();
   
 
@@ -355,10 +385,12 @@ const inter = ()=>{
 let observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if (entry.isIntersecting) {
-        foot.style.display = "none"
+
+        foot.style.display = "none";
         
       }else{
-         foot.style.display = "grid"
+
+         foot.style.display = "grid";
         
       }
     })

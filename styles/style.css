@@ -18,8 +18,8 @@
   --Soft-violet: hsl(273, 75%, 66%);
   --red: hsl(356, 69%, 56%);
   --green: hsl(163, 72%, 41%);
-  --font: "Poppins", sans-serif;
-  --font-2: "Roboto", sans-serif;
+  --font: 'Poppins', sans-serif;
+  --font-2: 'Roboto', sans-serif;
   --alpha: 1;
   --alpha-2: 0.8;
   --alpha-3: 0.6;
@@ -30,12 +30,14 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *::after,
 *::before {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -56,20 +58,31 @@ body {
 
 header {
   max-width: 480px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#549ef2));
   background: linear-gradient(#af67e9, #549ef2);
   position: relative;
   height: 100px;
 }
+
 header nav {
   width: 100%;
   max-width: 480px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 1em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 header nav .logo h1 {
   text-transform: capitalize;
   font-size: 2rem;
@@ -81,14 +94,23 @@ header nav .logo h1 {
   text-transform: uppercase;
   color: var(--BG);
 }
+
 header nav ul {
   display: none;
 }
+
 header nav .button--area {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 header nav .button--area label {
   background-color: var(--BG);
   width: 40px;
@@ -98,8 +120,11 @@ header nav .button--area label {
   position: relative;
   cursor: pointer;
 }
+
 header nav .button--area label button {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   background-color: var(--Toggle);
   position: absolute;
@@ -109,51 +134,76 @@ header nav .button--area label button {
   width: 15px;
   height: 15px;
   pointer-events: none;
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
   transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
 }
+
 header nav .button--area button {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   width: 20px;
   height: 20px;
   background-color: unset;
   cursor: pointer;
 }
+
 header nav .button--area button svg {
   pointer-events: none;
 }
+
 header nav .button--area button svg path {
   fill: var(--BG);
 }
+
 header .input--area {
   background-color: var(--BG);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin: 1em 0.5em;
   padding: 1em;
 }
+
 header .input--area h2 {
   font-size: 1rem;
   text-align: left;
   color: var(--button--text);
   text-transform: capitalize;
-  align-self: start;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
   margin-bottom: 0.5em;
   font-family: var(--font-2);
   font-weight: 500;
   letter-spacing: 1px;
 }
+
 header .input--area form {
   width: 100%;
   height: 30px;
   position: relative;
 }
+
 header .input--area form input {
   width: 100%;
   height: 40px;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   border-radius: 3px;
   padding: 0.5em;
@@ -161,23 +211,29 @@ header .input--area form input {
   font-size: 1rem;
   background-color: var(--Top-BG-Pattern);
 }
+
 header .input--area form #searchbutton {
   position: absolute;
   right: 10px;
   top: 10px;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   background-color: unset;
   cursor: pointer;
 }
+
 header .input--area form #searchbutton svg {
   width: 20px;
   height: 20px;
   pointer-events: none;
 }
+
 header .input--area form #searchbutton svg path {
   stroke: var(--Blue);
 }
+
 header .input--area .filter--area {
   position: relative;
   margin: 1em 0;
@@ -185,15 +241,24 @@ header .input--area .filter--area {
   width: 100%;
   padding: 0.5em;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 header .input--area .filter--area button {
   margin: 0 1em;
   display: inline-block;
   line-height: 1.5;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   cursor: pointer;
   padding: 0.375em 0.75em;
@@ -215,49 +280,77 @@ header .input--area .filter--area button {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: 13000;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   overflow: hidden;
   max-width: 480px;
 }
+
 .mobile--nav nav {
   margin-top: 1em;
   background-color: var(--BG);
   padding: 2em 6em;
   border-radius: 3px;
   position: relative;
-  transform: translateY(-150%);
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
 }
+
 .mobile--nav nav #close--button {
   position: absolute;
   top: 10px;
   right: 10px;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   cursor: pointer;
   background-color: unset;
 }
+
 .mobile--nav nav #close--button svg {
   pointer-events: none;
 }
+
 .mobile--nav nav #close--button svg path {
   fill: var(--Blue);
 }
+
 .mobile--nav nav ul {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .mobile--nav nav ul li {
   margin: 0 1em;
 }
+
 .mobile--nav nav ul li {
   margin: 1em 0;
 }
+
 .mobile--nav nav ul a {
   text-decoration: none;
   font-size: 1rem;
@@ -267,6 +360,7 @@ header .input--area .filter--area button {
   color: var(--Text-1);
   letter-spacing: 1px;
 }
+
 .mobile--nav nav ul a:hover {
   color: var(--Blue);
 }
@@ -275,45 +369,73 @@ main {
   padding: 8em 0 0 0;
   max-width: 480px;
 }
+
 main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 2em 0.5em;
   max-width: 480px;
 }
+
 main .container .jobs--area {
   width: 100%;
+  display: -ms-grid;
   display: grid;
   list-style: none;
-  grid-template-columns: repeat(auto-fit, 350px);
+  -ms-grid-columns: (350px)[auto-fit];
+      grid-template-columns: repeat(auto-fit, 350px);
   grid-auto-rows: auto;
   gap: 1rem;
   place-content: center;
 }
+
 main .container .jobs--area li {
   background-color: var(--BG);
   padding: 1em 0 1em 1em;
-  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-4));
+  -webkit-box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-4));
+          box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-4));
+  -webkit-transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
   transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
+  transition: opacity 0.4s cubic-bezier(0.61, 1, 0.88, 1), transform 0.4s cubic-bezier(0.61, 1, 0.88, 1), -webkit-transform 0.4s cubic-bezier(0.61, 1, 0.88, 1);
   cursor: pointer;
 }
 
 .jobs {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 60px 1fr;
+  -ms-grid-columns: 60px 1fr;
+      grid-template-columns: 60px 1fr;
   place-items: center;
   font-family: var(--font-2);
   gap: 1rem;
   pointer-events: none;
 }
+
 .jobs .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
+
 .jobs h2 {
   text-transform: capitalize;
   font-size: 1rem;
@@ -322,35 +444,50 @@ main .container .jobs--area li {
   margin-bottom: 0.5em;
   width: 100%;
 }
+
 .jobs .img--section {
   width: 50px;
   height: 50px;
   background-color: var(--Top-BG-Pattern);
   border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 0.5em;
 }
+
 .jobs .posted-time {
   font-size: 0.8rem;
   color: var(--Text-1);
   display: block;
   margin-left: 0.5em;
-  align-self: start;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
 }
+
 .jobs article {
   text-align: left;
   width: 100%;
   overflow: hidden;
 }
+
 .jobs article h3 {
   font-size: 0.8rem;
   display: inline-block;
   margin: 0.5em;
   color: var(--Text-2);
   font-weight: 400;
+  -webkit-transition: -webkit-transform 0.4 ease 0.4s;
+  transition: -webkit-transform 0.4 ease 0.4s;
   transition: transform 0.4 ease 0.4s;
+  transition: transform 0.4 ease 0.4s, -webkit-transform 0.4 ease 0.4s;
 }
 
 .not--found h2 {
@@ -362,62 +499,97 @@ main .container .jobs--area li {
 }
 
 .loader {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 60px 1fr;
+  -ms-grid-columns: 60px 1fr;
+      grid-template-columns: 60px 1fr;
   place-content: center;
 }
+
 .loader .img--section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .loader .img--section .box {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
+
 .loader .box {
   width: 100%;
   height: 20px;
   background-color: var(--loader);
 }
+
 .loader .info {
   padding: 1em;
 }
+
 .loader .info .box {
   margin-bottom: 1em;
 }
 
 .selected--job {
   max-width: 480px;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(1, minmax(380px, 480px));
+  -ms-grid-columns: (minmax(380px, 480px))[1];
+      grid-template-columns: repeat(1, minmax(380px, 480px));
   gap: 1rem;
 }
+
 .selected--job a {
   text-decoration: none;
 }
+
 .selected--job .job--intro {
   background-color: var(--BG);
   height: 200px;
   border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .selected--job .job--intro .job--img--section {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background-color: var(--Top-BG-Pattern);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .selected--job .job--intro .job--info--section {
   margin-top: 1em;
 }
+
 .selected--job .job--intro .job--info--section h2 {
   text-transform: capitalize;
   font-size: 1rem;
@@ -425,15 +597,19 @@ main .container .jobs--area li {
   color: var(--Text-2);
   margin-bottom: 0.5em;
 }
+
 .selected--job .job--intro .job--info--section h2 span {
   display: block;
   font-size: 0.8rem;
   color: var(--Text-1);
 }
+
 .selected--job .job--intro .job--info--section a {
   display: inline-block;
   line-height: 1.5;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   cursor: pointer;
   padding: 0.375em 0.75em;
@@ -450,22 +626,29 @@ main .container .jobs--area li {
   text-transform: capitalize;
   letter-spacing: 1px;
   position: relative;
+  -webkit-transition: background 0.4s ease;
   transition: background 0.4s ease;
 }
+
 .selected--job .job--intro .job--info--section a:hover {
   background-color: var(--Blue);
   color: var(--BG);
 }
+
 .selected--job .jobs--overview {
   background-color: var(--BG);
   padding: 1em;
 }
+
 .selected--job .jobs--overview .job--description {
   margin: 1em 0;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
   gap: 0.8rem;
 }
+
 .selected--job .jobs--overview .job--description h3 {
   font-size: 0.8rem;
   color: var(--Text-1);
@@ -474,20 +657,25 @@ main .container .jobs--area li {
   letter-spacing: 1px;
   text-align: center;
 }
+
 .selected--job .jobs--overview .job--description h3 span {
   display: inline-block;
   margin-left: 0.3em;
 }
+
 .selected--job .jobs--overview .job--description .job--des--name {
   text-transform: capitalize;
   font-size: 1.3rem;
   color: var(--Text-2);
   font-weight: 700;
 }
+
 .selected--job .jobs--overview .job--description a {
   display: inline-block;
   line-height: 1.5;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   cursor: pointer;
   padding: 0.375em 0.75em;
@@ -504,15 +692,18 @@ main .container .jobs--area li {
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .selected--job .jobs--overview article {
   line-height: 1.8;
 }
+
 .selected--job .jobs--overview article p {
   font-size: 0.8rem;
   margin: 1em 0;
   color: var(--Text-1);
   display: inline-block;
 }
+
 .selected--job .jobs--overview article ul {
   color: var(--Text-2);
   font-size: 0.8rem;
@@ -521,30 +712,36 @@ main .container .jobs--area li {
   letter-spacing: 1px;
   font-weight: 400;
 }
+
 .selected--job .jobs--overview article ul li {
   margin: 0.5em 0;
 }
+
 .selected--job .jobs--overview article .res--list {
   list-style: numbers;
 }
+
 .selected--job .how--to--apply {
   background-color: var(--BG);
   color: var(--Text-2);
   font-family: var(--font-2);
   padding: 2em;
 }
+
 .selected--job .how--to--apply h3 {
   text-transform: capitalize;
   font-size: 1rem;
   letter-spacing: 1px;
   font-weight: 700;
 }
+
 .selected--job .how--to--apply p {
   font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 1px;
   display: block;
 }
+
 .selected--job .how--to--apply a {
   text-decoration: underline;
   font-size: 0.8rem;
@@ -558,6 +755,7 @@ main .container .jobs--area li {
 .over {
   padding: 0;
 }
+
 .over .container {
   padding: 0 1em;
   position: relative;
@@ -571,26 +769,33 @@ main .container .jobs--area li {
   left: 0;
   z-index: 11000;
   background-color: var(--BG);
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 1fr 100px;
+  -ms-grid-columns: 1fr 100px;
+      grid-template-columns: 1fr 100px;
   padding: 0.5em;
 }
+
 .footer--overlay h3 {
   color: var(--Text-2);
   font-size: 1rem;
   text-transform: capitalize;
 }
+
 .footer--overlay span {
   color: var(--Text-1);
   font-size: 0.8rem;
 }
+
 .footer--overlay a {
   margin: 0 1em;
   place-self: center;
   text-decoration: none;
   display: inline-block;
   line-height: 1.5;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   border: none;
   cursor: pointer;
   padding: 0.375em 0.75em;
@@ -606,7 +811,35 @@ main .container .jobs--area li {
   position: relative;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 0.5em 2em;
+}
+
+.error span {
+  display: block;
+}
+
+.error h1 {
+  text-transform: capitalize;
+  color: var(--red);
+  font-size: 3rem;
+  padding: 2em;
+}
+
+::-webkit-input-placeholder {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: var(--font-1);
+}
+
+:-ms-input-placeholder {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: var(--font-1);
+}
+
+::-ms-input-placeholder {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-family: var(--font-1);
 }
 
 ::placeholder {
@@ -616,29 +849,35 @@ main .container .jobs--area li {
 }
 
 .show nav {
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 
 .hover--state:hover {
-  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .art--ani article h3 {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .list--animation {
-  animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
+  -webkit-animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
+          animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards;
 }
 
 .list--animation-2 {
   opacity: 0;
-  animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.4s;
+  -webkit-animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.4s;
+          animation: list-items 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.4s;
 }
 
 .list--animation-3 {
   opacity: 0;
-  animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.6s;
+  -webkit-animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.6s;
+          animation: list 0.4s cubic-bezier(0.61, 1, 0.88, 1) forwards 0.6s;
 }
 
 .hide {
@@ -653,36 +892,70 @@ main .container .jobs--area li {
   min-width: 4rem;
   background-color: var(--BG);
   border-radius: 3px;
-  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-3));
+  -webkit-box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-3));
+          box-shadow: 0 5px 10px -5px rgba(0, 0, 0, var(--alpha-3));
   letter-spacing: 1px;
   font-family: var(--font-2);
   font-weight: 400;
 }
 
 .toggle--move button {
-  transform: translateX(120%);
+  -webkit-transform: translateX(120%);
+          transform: translateX(120%);
+}
+
+@-webkit-keyframes list {
+  0% {
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes list {
   0% {
-    transform: scale(0.3);
+    -webkit-transform: scale(0.3);
+            transform: scale(0.3);
     opacity: 0;
   }
   100% {
-    transform: scale(1);
+    -webkit-transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
+
+@-webkit-keyframes list-items {
+  0% {
+    -webkit-transform: scaleX(0.3);
+            transform: scaleX(0.3);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
 @keyframes list-items {
   0% {
-    transform: scaleX(0.3);
+    -webkit-transform: scaleX(0.3);
+            transform: scaleX(0.3);
     opacity: 0;
   }
   100% {
-    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
     opacity: 1;
   }
 }
+
 .dark {
   --BG: hsl(228, 42%, 18%);
   --Top-BG-Pattern: hsl(225, 45%, 14%);
@@ -702,35 +975,42 @@ main .container .jobs--area li {
   header nav {
     max-width: 768px;
   }
-
   .mobile--nav {
     max-width: 768px;
   }
-
   main {
     max-width: 768px;
   }
   main .container {
     max-width: 768px;
   }
-  main .container ul {
-    grid-template-columns: repeat(auto-fit, 420px);
-  }
   main .container .selected--job .job--intro {
-    max-width: 420px;
-    flex-direction: row;
-    justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     height: 120px;
   }
   main .container .selected--job .job--intro .job--img--section {
     margin-left: 1em;
   }
   main .container .selected--job .job--intro .job--info--section {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-    flex: 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-flex: 50%;
+        -ms-flex: 50%;
+            flex: 50%;
   }
   main .container .selected--job .job--intro .job--info--section h3 {
     text-align: left;
@@ -742,7 +1022,8 @@ main .container .jobs--area li {
     margin: 0 1em;
   }
   main .container .selected--job .jobs--overview .job--description {
-    grid-template-columns: 1fr 1fr;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
   main .container .selected--job .jobs--overview .job--description h3 {
     text-align: left;
@@ -752,18 +1033,21 @@ main .container .jobs--area li {
     padding: 0.5em 2em;
   }
 }
+
 @media screen and (min-width: 769px) {
   header {
     max-width: 900px;
   }
+  header .input--area {
+    max-width: 700px;
+    margin: 0 auto;
+  }
   header nav {
     max-width: 900px;
   }
-
   .mobile--nav {
     max-width: 900px;
   }
-
   main {
     max-width: 900px;
   }
@@ -771,13 +1055,14 @@ main .container .jobs--area li {
     max-width: 900px;
   }
   main .container .selected--job {
-    max-width: 700px;
+    -ms-grid-columns: (580px)[1];
+        grid-template-columns: repeat(1, 580px);
   }
-
   .jobs h2 {
     font-size: 1.3rem;
   }
 }
+
 @media screen and (min-width: 901px) {
   header {
     max-width: 1100px;
@@ -785,15 +1070,14 @@ main .container .jobs--area li {
   header nav {
     max-width: 1100px;
   }
-
   .mobile--nav {
     max-width: 1100px;
   }
-
   main {
     max-width: 1100px;
   }
 }
+
 @media screen and (min-width: 1101px) {
   header {
     max-width: 1440px;
@@ -801,11 +1085,9 @@ main .container .jobs--area li {
   header nav {
     max-width: 1440px;
   }
-
   .mobile--nav {
     max-width: 1440px;
   }
-
   main {
     max-width: 1440px;
   }
@@ -813,5 +1095,4 @@ main .container .jobs--area li {
     max-width: 1440px;
   }
 }
-
 /*# sourceMappingURL=style.css.map */

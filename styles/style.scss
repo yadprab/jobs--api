@@ -624,13 +624,7 @@ main {
         article{
              line-height: 1.8;
 
-            // p:nth-of-type(5):nth-of-type(6):nth-of-type(7){
-            //     text-transform: capitalize;
-            //     font-size: 1rem;
-            //     color: var(--Text-2);
-            //     font-weight: 700;
-            //     letter-spacing: 1px;
-            // }
+           
             p{
                 font-size: 0.8rem;
                
@@ -747,7 +741,7 @@ main {
              position: relative;
              font-weight: 700;
              text-transform: uppercase;
-             padding: 0.5em 2em;
+           
 
 
          }
@@ -755,7 +749,18 @@ main {
     
 }
 
-
+.error{
+    span{
+        display: block;
+    
+    }
+    h1{
+        text-transform: capitalize;
+        color: var(--red);
+        font-size: 3rem;
+        padding: 2em;
+    }
+}
 
 
 
@@ -913,14 +918,11 @@ main {
         .container {
             max-width: 768px;
 
-            ul {
-                grid-template-columns: repeat(auto-fit, 420px);
-            }
-
+          
             .selected--job{
               
                 .job--intro{
-                    max-width: 420px;
+                  
                    flex-direction: row;
                    justify-content:space-around;
                    height: 120px;
@@ -978,8 +980,14 @@ main {
 
     header {
         max-width: 900px;
+       
 
+         .input--area{
+             max-width: 700px;
+            margin: 0 auto;
+            
 
+         }
 
 
 
@@ -1002,7 +1010,7 @@ main {
             max-width: 900px;
 
             .selected--job{
-                max-width: 700px;
+                grid-template-columns: repeat(1, 580px);
             }
 
             
