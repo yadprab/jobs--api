@@ -174,8 +174,6 @@ const jobSearchFn = () => {
 
     const dataObj = obj;
 
-    console.log(JSON.stringify(dataObj.description.replace(/\n/g, "")));
-
     const main = document.querySelector("main");
 
     main.classList.add("over");
