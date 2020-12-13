@@ -1,204 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <meta name="theme-color" content="#f4f4fb">
-    <link rel="stylesheet" href="./styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="theme-color" content="#f4f4fb" />
+    <link rel="stylesheet" href="./styles/style.css" />
     <title>DEV jobs</title>
-</head>
-<body class="dark">
+  </head>
+  <body class="dark">
     <section class="mobile--nav hide">
-        <nav>
-            <ul class="mobile--nav--links">
-                <li><a href="index.html"  aria-label="click here for home page">home</a></li>
-                <li><a href="#" aria-label="click here for about page">about</a></li>
-                <li><a href="#" aria-label="click here for contact page">contact</a></li>
-                
-            </ul>
+      <nav>
+        <ul class="mobile--nav--links">
+          <li>
+            <a href="index.html" aria-label="click here for home page">home</a>
+          </li>
+          <li><a href="#" aria-label="click here for about page">about</a></li>
+          <li>
+            <a href="#" aria-label="click here for contact page">contact</a>
+          </li>
+        </ul>
 
-          
-            <section class="icon">
-               
-                <button id="close--button" aria-label="close button">
-                    <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z" fill="#fff" fill-rule="evenodd" /></svg>
-
-                </button>
-
-            </section>
-         
-        </nav>
-
+        <section class="icon">
+          <button id="close--button" aria-label="close button">
+            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14.364.222l1.414 1.414L9.414 8l6.364 6.364-1.414 1.414L8 9.414l-6.364 6.364-1.414-1.414L6.586 8 .222 1.636 1.636.222 8 6.586 14.364.222z"
+                fill="#fff"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </button>
+        </section>
+      </nav>
     </section>
     <header>
-        <nav>
-            <section class="logo">
-              <h1>dev jobs</h1>
-            </section>
+      <nav>
+        <section class="logo">
+          <h1>dev jobs</h1>
+        </section>
 
-            <ul>
-                <li><a href="index.html"  aria-label="click here for home page">home</a></li>
-                <li><a href="#" aria-label="click here for about page">about</a></li>
-                <li><a href="#" aria-label="click here for contact page">contact</a></li>
-               
-            </ul>
+        <ul>
+          <li>
+            <a href="index.html" aria-label="click here for home page">home</a>
+          </li>
+          <li><a href="#" aria-label="click here for about page">about</a></li>
+          <li>
+            <a href="#" aria-label="click here for contact page">contact</a>
+          </li>
+        </ul>
 
-            <section class="button--area">
-                <label for="toggle--button" id="toggle" class="">
-                    <button role="switch" id="toggle--button" aria-label="theme switcher" ></button>
-                </label>
-              
+        <section class="button--area">
+          <label for="toggle--button" id="toggle" class="">
+            <button
+              role="switch"
+              id="toggle--button"
+              aria-label="theme switcher"
+            ></button>
+          </label>
 
-                <button id="navigation--button" aria-label="navigation button">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" id="title desc">
-                        <title> navigation--button</title>
-                        <desc> three bars </desc>
-                        <!--
+          <button id="navigation--button" aria-label="navigation button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 448 512"
+              id="title desc"
+            >
+              <title>navigation--button</title>
+              <desc>three bars</desc>
+              <!--
                         Font Awesome Free 5.15.0 by @fontawesome - https://fontawesome.com
                         License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
                         -->
-                        <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>
-                </button>
-
-            </section>
-
-          
-        </nav>
-        <section class="input--area">
-            <h2>search and sort jobs</h2>
-          <form action="" aria-label="search area">
-              <input type="search" name="search" id="search" aria-label="search jobs" placeholder="enter your job description">
-            
-              <button id="searchbutton" aria-label="search button">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                    
-
-              </button>
-
-          </form>
-          <section class="filter--area" aria-label="filter area">
-             <button id="all" data-value="all" class="button--not--active" aria-label="show all jobs">all</button>
-             <button id="full--time-job" data-value="fulltime" class="button--not--active" aria-label="filter full time jobd">fulltime</button>
-             <button id="part--time-job" data-value="parttime" class="button--not--active" aria-label="filter part time jobs">parttime</button>
-
-          </section>
+              <path
+                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+              />
+            </svg>
+          </button>
         </section>
+      </nav>
+      <section class="input--area">
+        <h2>search and sort jobs</h2>
+        <form action="" aria-label="search area">
+          <input
+            type="search"
+            name="search"
+            id="search"
+            aria-label="search jobs"
+            placeholder="enter your job description"
+          />
+
+          <button id="searchbutton" aria-label="search button">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                stroke="#4A5568"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+        </form>
+        <section class="filter--area" aria-label="filter area">
+          <button
+            id="all"
+            data-value="all"
+            class="button--not--active"
+            aria-label="show all jobs"
+          >
+            all
+          </button>
+          <button
+            id="full--time-job"
+            data-value="fulltime"
+            class="button--not--active"
+            aria-label="filter full time jobd"
+          >
+            fulltime
+          </button>
+          <button
+            id="part--time-job"
+            data-value="parttime"
+            class="button--not--active"
+            aria-label="filter part time jobs"
+          >
+            parttime
+          </button>
+        </section>
+      </section>
     </header>
     <main>
-
-        <section class="container" role="contentinfo" aria-label=" contains job title, location and type">
-             <ul class="jobs--area" >
-              
-               
-                <li class="loader hide " >
-                    <section class="img--section" >
-                       <div class="box"></div>
-                    </section>
-                    <section class="info">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </section>
-
-                </li>
-                <li class="loader hide">
-                    <section class="img--section" >
-                       <div class="box"></div>
-                    </section>
-                    <section class="info">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </section>
-
-                </li>
-                <li class="loader hide">
-                    <section class="img--section" >
-                       <div class="box"></div>
-                    </section>
-                    <section class="info">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </section>
-
-                </li>
-                <li class="loader hide">
-                    <section class="img--section" >
-                       <div class="box"></div>
-                    </section>
-                    <section class="info">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </section>
-
-                </li>
-                <li class="loader hide">
-                    <section class="img--section" >
-                       <div class="box"></div>
-                    </section>
-                    <section class="info">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </section>
-
-                </li>
-                <li class="loader hide">
-                    <section class="img--section" >
-                       <div class="box"></div>
-                    </section>
-                    <section class="info">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </section>
-
-                </li>
-                <li class="loader hide">
-                    <section class="img--section" >
-                       <div class="box"></div>
-                    </section>
-                    <section class="info">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </section>
-
-                </li>
-                <li class="loader hide">
-                    <section class="img--section" >
-                       <div class="box"></div>
-                    </section>
-                    <section class="info">
-                        <div class="box"></div>
-                        <div class="box"></div>
-                        <div class="box"></div>
-                    </section>
-
-                </li> 
-              
-               
-
-            </ul>
-        
-        </section>
-
+      <section
+        class="container"
+        role="contentinfo"
+        aria-label=" contains job title, location and type"
+      >
+        <ul class="jobs--area">
+          <li class="loader hide">
+            <section class="img--section">
+              <div class="box"></div>
+            </section>
+            <section class="info">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </section>
+          </li>
+          <li class="loader hide">
+            <section class="img--section">
+              <div class="box"></div>
+            </section>
+            <section class="info">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </section>
+          </li>
+          <li class="loader hide">
+            <section class="img--section">
+              <div class="box"></div>
+            </section>
+            <section class="info">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </section>
+          </li>
+          <li class="loader hide">
+            <section class="img--section">
+              <div class="box"></div>
+            </section>
+            <section class="info">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </section>
+          </li>
+          <li class="loader hide">
+            <section class="img--section">
+              <div class="box"></div>
+            </section>
+            <section class="info">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </section>
+          </li>
+          <li class="loader hide">
+            <section class="img--section">
+              <div class="box"></div>
+            </section>
+            <section class="info">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </section>
+          </li>
+          <li class="loader hide">
+            <section class="img--section">
+              <div class="box"></div>
+            </section>
+            <section class="info">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </section>
+          </li>
+          <li class="loader hide">
+            <section class="img--section">
+              <div class="box"></div>
+            </section>
+            <section class="info">
+              <div class="box"></div>
+              <div class="box"></div>
+              <div class="box"></div>
+            </section>
+          </li>
+        </ul>
+      </section>
     </main>
- 
-
-
-
-
 
     <script src="./js/moment.js"></script>
 
-
-    
     <script src="./js/main.js"></script>
-</body>
+  </body>
 </html>
